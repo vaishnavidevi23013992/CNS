@@ -26,9 +26,55 @@ becomes C. To change a message back, each letter is replaced by the one three be
 ### STEP-4: Else subtract the key from the plain text.
 ### STEP-5: Display the cipher text obtained above.
 
+<H3>PROGRAM</H3>
+```
+#include <stdio.h>
+#include <string.h>
+#include <conio.h>
+#include <ctype.h>
+void main()
+{
+   char plain[10],cipher[10];
+   int key,i,length;
+   int result;
+   printf("\n Enter the plain text:");
+   scanf("%s", plain);
+   printf("\n Enter the key value:");
+   scanf("%d", &key);
+   printf("\n \n \t PLAIN TEXt: %s", plain);
+   printf("\n \n \t ENCRYPTED TEXT:");
+   for(i=0, length = strlen(plain); i<length; i++)
+   {
+cipher[i]=plain[i] + key;
+if (isupper(plain[i]) && (cipher[i] > 'Z'))
+cipher[i] = cipher[i] - 26;
+if (islower(plain[i]) && (cipher[i] > 'z'))
+cipher[i] = cipher[i] - 26;
+printf("%c", cipher[i]);
+The program is executed successfully.
+Releases
+No releases published
+Packages
+}
+printf("\n \n \t AFTER DECRYPTION : ");
+for(i=0;i<length;i++)
+{
+plain[i]=cipher[i]-key;
+if(isupper(cipher[i])&&(plain[i]<'A'))
+plain[i]=plain[i]+26;
+if(islower(cipher[i])&&(plain[i]<'a'))
+plain[i]=plain[i]+26;
+printf("%c",plain[i]);
+}
+getch();
+}
 
-PROGRAM :-
+```
 
 
+<h3>OUTPUT</h3>
 
-OUTPUT :-
+![Screenshot 2025-05-22 141541](https://github.com/user-attachments/assets/d8d1e973-a047-460c-b72c-987285ab5df8)
+
+**RESULT:**
+The program is executed successfully.
